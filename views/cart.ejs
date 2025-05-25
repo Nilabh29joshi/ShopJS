@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Cart</title>
+</head>
+<body>
+  <a href="/dishes" class="btn">Continue Shopping</a>
+    <h1>Your Cart</h1>
+
+    <% if (cart.length > 0) { %>
+      <ul id="cart-items">
+        <% cart.forEach(item => { %>
+          <li data-id="<%= item.id %>">
+            <img src="<%= item.image %>" alt="<%= item.name %>" class="n">
+            <h2><%= item.name %></h2>
+            <p>Price: $<%= item.price %></p>
+    
+            <!-- Quantity Update UI -->
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button class="update-cart" data-action="decrease" <% if (item.quantity <= 1) { %>disabled<% } %>>−</button>
+    
+              <input type="number" value="<%= item.quantity %>" readonly style="width: 40px; text-align: center;" class="quantity-display">
+    
+              <button class="update-cart" data-action="increase" >+</button>
+            </div>
+          </li>
+
+          <!-- Remove from Cart Button -->
+         <form action="/remove-from-cart" method="POST">
+            <input type="hidden" name="id" value="<%= item.id %>">
+            <button type="submit" class="btn">Remove</button>
+          </form>
+        <% }); %>
+      </ul><br>
+
+      <!-- Total Price Calculation -->
+      <p>Total: $<span id="cart-total"><%= cart.reduce((total, item) => total + item.price * item.quantity, 0) %></span></p>
+      <h2>Select Payment Method</h2>
+      <form action="/checkout" method="POST">
+        <label>
+          <input type="radio" name="paymentMethod" value="credit_card" required> Credit Card
+        </label><br>
+        <label>
+          <input type="radio" name="paymentMethod" value="paypal"> PayPal
+        </label><br>
+        <label>
+          <input type="radio" name="paymentMethod" value="cod"> Cash on Delivery
+        </label><br><br>
+    
+        <button type="submit" class="btn">Proceed to Payment</button>
+      </form>
+    <% } else { %>
+      <p>Your cart is empty.</p>
+    <% } %>
+
+    <script src="/javascripts/script1.js"></script>
+</body>
+</html>

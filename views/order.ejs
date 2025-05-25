@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NJCART</title>
+
+  
+
+    
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+      <!-- custom css file link -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    
+  </head>
+  <body>
+
+<!-- header section start -->
+<header>
+  <a href="#" class="logo"><i class="fa-solid fa-utensils fa-bounce"></i>njcart</a>
+
+  <nav class="navbar">
+    <a href="/">home</a>
+    <a href="/dishes">items</a>
+    <a href="/about">about</a>
+    <a href="/menu">grocery</a> 
+    <a class="active" href="/order">order</a>
+
+  </nav>
+
+  <div class="icons">
+    <i class="fas fa-star" onclick="myFunction()"></i>
+    <i class="fas fa-bars" id="menu-bars"></i>
+    <i class="fas fa-search" id="search-icon"></i>
+    <a href="#" class="fas fa-heart"></a>
+    <a href="/cart" class="fas fa-shopping-cart"></a>
+  </div>
+</header>
+<!-- header section ends -->
+
+
+
+<!-- search form -->
+<form action="" id="search-form">
+  <input type="search" placeholder="search here..." id="search-box">
+  <label for="search-box" class="fas fa-search"></label>
+  <i class="fas fa-times" id="close"></i>
+</form>
+
+
+ <!-- order section starts -->
+ <section class="order" id="order">
+       
+    <h3 class="sub-heading">order now</h3>
+    <h1 class="heading">free and fast delivery</h1>
+  
+   <form action="/order" method="post">
+              
+     <div class="inputBox">
+      <div class="input">
+        <span>your name</span>
+        <input name="name" type="text" placeholder="enter your name" required>
+      </div>
+      <div class="input">
+        <span>your order</span>
+        <input name="order1" type="text" placeholder="enter food name" required>
+      </div>
+      <div class="input">
+        <span>your number</span>
+        <input name="number" type="text" placeholder="enter your number" required>
+      </div>
+      <div class="input">
+        <span>additional food</span>
+        <input type="text" placeholder="extra with food">
+      </div>
+     </div>
+     
+     <div class="inputBox">
+      <div class="input">
+        <span>how much</span>
+        <input name="howmuch" type="number" placeholder="how many orders" required>
+      </div>
+      <div class="input">
+        <span>date and time</span>
+        <input name="date" type="datetime-local" required>
+      </div>
+     </div>
+
+     <div class="inputBox">
+      <div class="input">
+        <span>your address</span>
+       <textarea name="address" placeholder="enter your address" id="" cols="30" rows="10">
+       </textarea>
+      </div>
+      <div class="input">
+        <span>your message</span>
+       <textarea name="message" placeholder="enter your message" id="" cols="30" rows="10">
+       </textarea>
+      </div>
+    </div>
+
+     <input type="submit" value="order now" class="btn">
+
+   </form>
+
+
+  </section>
+ <!-- order section ends -->
+
+<!-- footer section starts -->
+
+<section class="footer">
+  <div class="box-container">
+
+     <div class="box">
+       <h3>locations</h3>
+       <a href="#">mumbai</a>
+       <a href="#">jaipur</a>
+       <a href="#">banglore</a>
+       <a href="#">chandigarh</a>
+       <a href="#">ahemedabad</a>
+     </div>  
+
+     <div class="box">
+       <h3>quick links</h3>
+       <a href="/">home</a>
+       <a href="/dishes">dishes</a>
+       <a href="/about">about</a>
+       <a href="/menu">menu</a>
+       <a href="/order">order</a>
+     </div>    
+     
+     <div class="box">
+       <h3>contact info</h3>
+       <a href="#">9994442311</a>
+       <a href="#">8723102288</a>
+       <a href="#">njfoods@gmail.com</a>
+       <a href="#">jaipur, india - 400104</a>
+     </div>    
+    
+     <div class="myf">
+     <div class="box">
+       <h3>follow us</h3>
+       <a href="#">facebook</a>
+       <a href="#">twitter</a>
+       <a href="#">instagram</a>
+       <a href="#">linkedin</a>
+     </div>    
+   </div>
+
+
+
+   </div>
+
+
+   <div class="credit"> copyright @ 2023 by <span>njfoods</span></div>
+
+ </section>
+<!-- footer section ends  -->
+
+<!-- custom js file link -->
+<script src="/javascripts/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NJCART</title>
+
+  
+
+    
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+      <!-- custom css file link -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    
+  </head>
+  <body>
+
+<!-- header section start -->
+<header>
+  <a href="#" class="logo"><i class="fa-solid fa-utensils fa-bounce"></i>njcart</a>
+
+  <nav class="navbar">
+    <a href="/">home</a>
+    <a href="/dishes">items</a> 
+    <a href="/order">order</a>
+
+  </nav>
+
+
+  <div class="icons">
+    <i class="fas fa-star" onclick="myFunction()"></i>
+    <i class="fas fa-bars" id="menu-bars"></i>
+    <i class="fas fa-search" id="search-icon"></i>
+    <a href="#" class="fas fa-heart"></a>
+    <a href="/cart" class="fas fa-shopping-cart"></a>
+  </div>
+</header>
+<!-- header section ends -->
+
+
+
+<!-- search form -->
+<form action="" id="search-form">
+  <input type="search" placeholder="search here..." id="search-box">
+  <label for="search-box" class="fas fa-search"></label>
+  <i class="fas fa-times" id="close"></i>
+</form>
+
+
+<!-- menu section starts-->
+
+<section class="menu" id="menu">
+
+    <h3 class="sub-heading">Bakery</h3>
+    <h1 class="heading">Choose and Add to cart</h1>
+  
+  <div class="box-container">
+  
+    <% item3.forEach(menu => { %>
+      <div class="box">
+        <div class="image">
+        <img src="<%= menu.image %>" alt="<%= menu.name %>">
+        <a href="#" class="fas fa-heart"></a>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h3><%= menu.name %></h3>
+          <p>good food good mood</p>
+        <form action="/add-to-cart" method="POST">
+          <input type="hidden" name="id" value="<%= menu.id %>">
+          <input type="hidden" name="name" value="<%= menu.name %>">
+          <input type="hidden" name="price" value="<%= menu.price %>">
+          <input type="hidden" name="image" value="<%= menu.image %>">
+          <span>$<%= menu.price %></span>
+          <button type="submit" class="btn">Add to Cart</button>
+        </form>
+       </div>
+      </div>
+    <% }); %>
+  
+  
+  </div>
+  
+    
+  
+  </section>
+  
+  <!-- menu section ends-->
+
+
+<!-- footer section starts -->
+
+<section class="footer">
+  <div class="box-container">
+
+     <div class="box">
+       <h3>locations</h3>
+       <a href="#">mumbai</a>
+       <a href="#">jaipur</a>
+       <a href="#">banglore</a>
+       <a href="#">chandigarh</a>
+       <a href="#">ahemedabad</a>
+     </div>  
+
+     <div class="box">
+       <h3>quick links</h3>
+       <a href="/">home</a>
+       <a href="/dishes">dishes</a>
+       <a href="/about">about</a>
+       <a href="/menu">menu</a>
+       <a href="/order">order</a>
+     </div>    
+     
+     <div class="box">
+       <h3>contact info</h3>
+       <a href="#">9994442311</a>
+       <a href="#">8723102288</a>
+       <a href="#">njfoods@gmail.com</a>
+       <a href="#">jaipur, india - 400104</a>
+     </div>    
+    
+     <div class="myf">
+     <div class="box">
+       <h3>follow us</h3>
+       <a href="#">facebook</a>
+       <a href="#">twitter</a>
+       <a href="#">instagram</a>
+       <a href="#">linkedin</a>
+     </div>    
+   </div>
+
+
+
+   </div>
+
+
+   <div class="credit"> copyright @ 2023 by <span>njfoods</span></div>
+
+ </section>
+<!-- footer section ends  -->
+
+<!-- custom js file link -->
+<script src="/javascripts/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  </body>
+</html>
